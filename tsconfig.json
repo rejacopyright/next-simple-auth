@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -13,8 +17,44 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@components/*": [
+        "_components/*"
+      ],
+      "@helpers/*": [
+        "_helpers/*"
+      ],
+      "@redux": [
+        "_redux"
+      ],
+      "@redux/*": [
+        "_redux/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@public/*": [
+        "public/*"
+      ],
+      "@images/*": [
+        "public/images/*"
+      ]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "files": [
+    "./node_modules/redux-persist/types/integration/react.d.ts"
+  ]
 }

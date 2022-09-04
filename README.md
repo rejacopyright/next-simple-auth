@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a simple [Next.js](https://nextjs.org/) authentication project without [next-auth](https://next-auth.js.org/) library
+
+See the [Demo](https://simple-auth-next.vercel.app/) page
 
 ## Getting Started
 
-First, run the development server:
+#### 1. Install Project
 
 ```bash
-npm run dev
-# or
+yarn install
+```
+
+#### 2. Run Project
+
+```bash
 yarn dev
 ```
 
+#### 2. Open Browser
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Overview
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+1. This is ***Credential Authentication***
+2. You can customize the **Auth Provider** as you want such as oAuth (e.g Google, Facebook, Twitter, Github, etc...), Email, Credentials, JWT, etc...
+3. This auth using Redux with tools such as redux toolkit, redux thunk, and redux persist
+4. This auth data stored to Cookies with redux persist. Therefore data will not be lost even reloading the browser
+5. You don't need to add auth validation on every page. Just set what prefix path do you want to become protected route from **middleware.ts** or **Layout Provider**. For example:
+```bash
+'admin' will protect all routes start with 'admin'
+e.g admin/:path*, admin/:path/:path/:path, and so on
+```
+6. Cookies expiration / max-age can be set from ***persistedReducer*** in `./_redux/index.tsx` (default 1 hour)
+7. Theming using ***CSS Post-Processor*** (Tailwind)
+8. Added support ***CSS Pre-Processor*** (Sass, Scss)
+9. bootstraped with `create-next-app`
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Pull request very welcome 🙂

@@ -6,19 +6,47 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ./src",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
+    "js-cookie": "^3.0.1",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.2",
+    "redux-persist": "^6.0.0",
+    "redux-persist-cookie-storage": "^1.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/js-cookie": "^3.0.2",
     "@types/node": "18.7.14",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "autoprefixer": "^10.4.8",
     "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5",
+    "eslint-config-next": "^12.2.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.16",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.8",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.8.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix --no-ignore"
+    ]
   }
 }
