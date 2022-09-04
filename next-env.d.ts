@@ -1,6 +1,5 @@
 /// <reference types="next" />
 /// <reference types="next/image-types/global" />
 
-declare module 'redux-persist-cookie-storage' {
-  export { CookieStorage, NodeCookiesWrapper } from 'redux-persist-cookie-storage'
-}
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.
